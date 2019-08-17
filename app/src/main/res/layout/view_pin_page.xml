@@ -1,0 +1,143 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/pinUnlock"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/app_bar_layout"
+    >
+
+    <ImageView
+        android:id="@+id/imgPrint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fingericon" />
+    <TextView
+        android:id="@+id/txtDescription"
+        style="@style/Body1Grey"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="16dp"
+        android:ellipsize="end"
+        android:maxLines="3"
+        android:text="@string/SetPin_Info"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/pinCirclesWrapper"
+        app:layout_constraintTop_toBottomOf="@+id/imgPrint"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/pinCirclesWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="45dp"
+        android:layout_marginTop="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <ImageView
+            android:id="@+id/imgPinMaskOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imgPinMaskTwo"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_circle_steel_20_with_border"
+            />
+
+        <ImageView
+            android:id="@+id/imgPinMaskTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgPinMaskOne"
+            app:layout_constraintEnd_toStartOf="@+id/imgPinMaskThree"
+            app:layout_constraintStart_toEndOf="@+id/imgPinMaskOne"
+            app:layout_constraintTop_toTopOf="@+id/imgPinMaskOne"
+            app:srcCompat="@drawable/ic_circle_steel_20_with_border"
+            />
+
+        <ImageView
+            android:id="@+id/imgPinMaskThree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgPinMaskTwo"
+            app:layout_constraintEnd_toStartOf="@+id/imgPinMaskFour"
+            app:layout_constraintStart_toEndOf="@+id/imgPinMaskTwo"
+            app:layout_constraintTop_toTopOf="@+id/imgPinMaskTwo"
+            app:srcCompat="@drawable/ic_circle_steel_20_with_border"
+            />
+
+        <ImageView
+            android:id="@+id/imgPinMaskFour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgPinMaskThree"
+            app:layout_constraintEnd_toStartOf="@+id/imgPinMaskFive"
+            app:layout_constraintStart_toEndOf="@+id/imgPinMaskThree"
+            app:layout_constraintTop_toTopOf="@+id/imgPinMaskThree"
+            app:srcCompat="@drawable/ic_circle_steel_20_with_border"
+            />
+
+        <ImageView
+            android:id="@+id/imgPinMaskFive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgPinMaskFour"
+            app:layout_constraintEnd_toStartOf="@+id/imgPinMaskSix"
+            app:layout_constraintStart_toEndOf="@+id/imgPinMaskFour"
+            app:layout_constraintTop_toTopOf="@+id/imgPinMaskFour"
+            app:srcCompat="@drawable/ic_circle_steel_20_with_border"
+            />
+
+        <ImageView
+            android:id="@+id/imgPinMaskSix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgPinMaskFive"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgPinMaskFive"
+            app:layout_constraintTop_toTopOf="@+id/imgPinMaskFive"
+            app:srcCompat="@drawable/ic_circle_steel_20_with_border"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/errorMessage"
+        style="@style/Body1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textAlignment="center"
+        android:textColor="@color/red_warning"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pinCirclesWrapper"
+        tools:text="Error message"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

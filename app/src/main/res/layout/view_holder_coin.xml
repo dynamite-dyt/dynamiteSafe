@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/viewHolderRootStat"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="13dp"
+    android:layout_marginStart="13dp"
+    android:background="@drawable/balance_coin_background4"
+    android:orientation="vertical"
+    android:paddingEnd="11dp"
+    android:paddingStart="11dp"
+    android:layout_marginBottom="8dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    >
+
+    <!-- first line -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="16dp"
+        >
+
+        <io.horizontalsystems.dynamitewallet.ui.extensions.CoinIconView
+            android:id="@+id/coinIcon"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <io.horizontalsystems.dynamitewallet.ui.extensions.RotatingCircleProgressView
+            android:id="@+id/iconProgress"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/coinIcon"
+            app:layout_constraintTop_toTopOf="@+id/coinIcon" />
+
+        <ImageView
+            android:id="@+id/imgSyncFailed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/grey"
+            android:indeterminateTintMode="src_atop"
+            android:src="@drawable/ic_attentions"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textCoinName"
+            style="@style/BaseSb"
+            android:layout_width="130dp"
+            android:layout_height="23dp"
+            android:layout_marginStart="56dp"
+            android:textColor="?BallanceCoinNameColor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Dynamite Token" />
+
+        <TextView
+            android:id="@+id/textCurrencyAmount"
+            style="@style/Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="4dp"
+            android:textColor="?BallanceCoinAmountColor"
+            app:layout_constraintBottom_toBottomOf="@+id/textCoinName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="$52.50" />
+        <TextView
+            android:id="@+id/textSyncProgress"
+            style="@style/Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:textColor="@color/grey"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Until Dec 17. 2018" />
+        <TextView
+            android:id="@+id/textExchangeRate"
+            style="@style/Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="56dp"
+
+            android:includeFontPadding="false"
+            android:textColor="@color/grey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="$6500 per BTC" />
+
+        <TextView
+            android:id="@+id/textCoinAmount"
+            style="@style/BaseSb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="4dp"
+            android:includeFontPadding="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="0.000078 BTC" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- second line -->
+    <!--androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="23dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="12dp">
+
+        <TextView
+            android:id="@+id/textSyncProgress"
+            style="@style/Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:textColor="@color/grey"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Until Dec 17. 2018" />
+
+        <TextView
+            android:id="@+id/textExchangeRate"
+            style="@style/Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:textColor="@color/grey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="$6500 per BTC" />
+
+        <TextView
+            android:id="@+id/textCurrencyAmount"
+            style="@style/BaseSb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="$52.50" />
+    </androidx.constraintlayout.widget.ConstraintLayout-->
+
+    <LinearLayout
+        android:id="@+id/buttonsWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/buttonReceive"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_receive"
+            android:text="@string/Balance_Deposit"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/buttonPay"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_send"
+            android:text="@string/Balance_Send"
+            android:textColor="@color/grey" />
+
+    </LinearLayout>
+
+</LinearLayout>

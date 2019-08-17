@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_first_page"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    >
+
+    <io.horizontalsystems.dynamitewallet.ui.extensions.ShadowlessToolbarView
+        android:id="@+id/shadowlessToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shadowlessToolbar"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <io.horizontalsystems.dynamitewallet.modules.settings.SettingsItemView
+                android:id="@+id/fingerprint"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/background_items"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:setting_title="@string/SettingsSecurity_Fingerprint"
+                />
+
+            <io.horizontalsystems.dynamitewallet.modules.settings.SettingsItemView
+                android:id="@+id/changePin"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:background="@drawable/background_items"
+                app:layout_constraintTop_toBottomOf="@+id/fingerprint"
+                app:setting_title="@string/SettingsSecurity_EditPin"
+                />
+
+            <View
+                android:id="@+id/bottomShade_1"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="?SettingsSectionBottomShadeColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/changePin"
+                />
+
+            <io.horizontalsystems.dynamitewallet.modules.settings.SettingsItemView
+                android:id="@+id/backupWallet"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/changePin"
+                android:background="@drawable/background_items"
+                app:setting_title="@string/SettingsSecurity_BackupWallet"
+                />
+
+            <io.horizontalsystems.dynamitewallet.modules.settings.SettingsItemView
+                android:id="@+id/importWallet"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/backupWallet"
+                app:setting_title="@string/SettingsSecurity_BackupWallet"
+                />
+
+            <View
+                android:id="@+id/bottomShade_2"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="?SettingsSectionBottomShadeColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/importWallet"
+                />
+
+            <io.horizontalsystems.dynamitewallet.modules.settings.SettingsItemView
+                android:id="@+id/unlink"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/importWallet"
+                android:background="@drawable/background_items"
+                app:setting_title="@string/SettingsSecurity_UnlinkFromThisDevice"
+                android:textAlignment="center"
+                />
+
+            <View
+                android:id="@+id/bottomShade_3"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="?SettingsSectionBottomShadeColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/unlink"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

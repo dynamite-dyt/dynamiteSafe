@@ -1,0 +1,49 @@
+package io.horizontalsystems.dynamitewallet.modules.pin.edit
+
+import com.nhaarman.mockito_kotlin.any
+import com.nhaarman.mockito_kotlin.verify
+import io.horizontalsystems.dynamitewallet.modules.RxBaseTest
+import io.horizontalsystems.dynamitewallet.modules.pin.PinModule
+import org.junit.Before
+import org.junit.Test
+import org.mockito.Mockito
+
+class EditPinPresenterTest {
+
+    private val interactor = Mockito.mock(PinModule.IPinInteractor::class.java)
+    private val router = Mockito.mock(EditPinModule.IEditPinRouter::class.java)
+    private val view = Mockito.mock(PinModule.IPinView::class.java)
+    private var presenter = EditPinPresenter(interactor, router)
+
+    @Before
+    fun setUp() {
+        RxBaseTest.setup()
+        presenter.view = view
+    }
+
+
+    @Test
+    fun viewDidLoad_setTitle() {
+        presenter.viewDidLoad()
+        verify(view).setTitle(any())
+    }
+
+    @Test
+    fun viewDidLoad() {
+        presenter.viewDidLoad()
+        verify(view).addPages(any())
+        verify(view).showBackButton()
+    }
+
+    @Test
+    fun didSavePin() {
+        presenter.didSavePin()
+        verify(router).dismiss()
+    }
+
+    @Test
+    fun onBackPressed() {
+        presenter.onBackPressed()
+        verify(router).dismiss()
+    }
+}
